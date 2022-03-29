@@ -48,19 +48,23 @@
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,.3)
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+  cursor: pointer;
 }
 .simpson-card__details {
   order: 1;
   padding: 20px;
 }
 .simpson-card__name {
-  margin: 0 0 20px;
+  margin: 0;
 }
-.simpson-card__description {}
+.simpson-card__description {
+  display: none;
+}
 .simpson-card__image {
   object-fit: cover;
   width: 100px;
+  display: none;
 }
 
 @media screen and (min-width:768px) {
@@ -73,4 +77,9 @@
 
     width: 200px;
   }
+}
+
+.simpson-card--visible .simpson-card__description,
+.simpson-card--visible .simpson-card__image {
+  display: block;
 }
