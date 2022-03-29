@@ -1,0 +1,76 @@
+.app {}
+.app__wrapper {
+  margin: 20px;
+}
+
+.app__header {
+  text-align: center;
+}
+.app__header-title {
+  font-size: 3em;
+  margin: 1em 0;
+}
+
+@media screen and (min-width:768px) {
+  .app__wrapper {
+    margin: 60px;
+  }
+}
+
+
+
+
+.app__main {}
+
+
+
+
+
+.the-simpsons {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 900px;
+}
+.the-simpsons__member {}
+
+.the-simpsons__member + .the-simpsons__member {
+  margin-top: 2em;
+}
+
+
+
+
+
+.simpson-card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,.3)
+}
+.simpson-card__details {
+  order: 1;
+  padding: 20px;
+}
+.simpson-card__name {
+  margin: 0 0 20px;
+}
+.simpson-card__description {}
+.simpson-card__image {
+  object-fit: cover;
+  width: 100px;
+}
+
+@media screen and (min-width:768px) {
+  .simpson-card {
+    flex-direction: row;
+    align-items: stretch;
+    padding-top: 0;
+  }
+  .simpson-card__image {
+
+    width: 200px;
+  }
+}
