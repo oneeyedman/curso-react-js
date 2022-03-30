@@ -1,0 +1,72 @@
+.sr {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;  /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;            /* 3 */
+}
+
+
+
+
+
+.app {}
+.app__wrapper {
+  margin: 0 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .app__wrapper {
+    margin: 0 auto;
+    max-width: 708px;
+  }
+}
+
+
+
+
+
+.app__header {}
+.app__title {
+  font-size: 3em;
+  margin: 2em 0 1em;
+}
+
+
+
+
+
+.app__main {}
+
+
+
+
+
+.app__add-todo {}
+.app__add-todo-form {}
+
+
+
+
+
+.form {}
+.form__row {}
+.form__label {}
+.form__field {}
+
+
+
+
+
+.app__todo {}
+.app__todo-title {}
+.app__todo-list {
+  padding-left: 20px;
+}
+.app__todo-item {}
