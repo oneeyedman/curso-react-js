@@ -1,3 +1,6 @@
+import { connect } from "react-redux";
+
+
 function TaskList(props) {
   return (
     <ul className="app__todo-list">
@@ -6,4 +9,9 @@ function TaskList(props) {
   );
 }
 
-export {TaskList};
+const mapStateToProps = (state) => {
+  return { list: state.list };
+}
+
+
+export default connect(mapStateToProps)(TaskList);

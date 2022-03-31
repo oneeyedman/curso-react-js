@@ -1,4 +1,6 @@
 import React from 'react';
+import {addAction} from "../state/actions";
+import {connect} from "react-redux";
 
 class NewTodo extends React.Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class NewTodo extends React.Component {
 
     if (taskName) {
       console.log(`La nueva tarea se llama ${taskName}`)
+     this.props.add(taskName);
     } else {
       console.log('Que qué?');
     }
@@ -38,4 +41,12 @@ class NewTodo extends React.Component {
   }
 }
 
-export {NewTodo};
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { add: (text) => dispatch(addAction(text)) };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(NewTodo);

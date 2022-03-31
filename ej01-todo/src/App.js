@@ -1,8 +1,6 @@
 import './App.css';
-import { NewTodo } from "./components/NewTodo";
-import { TaskList } from "./components/TaskList";
-
-const misOraciones = ['Tarea 1', 'tarea 2'];
+import NewTodo from "./components/NewTodo";
+import TaskList from "./components/TaskList";
 
 function App() {
   return (
@@ -22,7 +20,7 @@ function App() {
         <section className="app__todo">
           <div className="app__wrapper">
             <h2 className="app__todo-title sr">Lista de tareas</h2>
-            <TaskList list={ misOraciones }/>
+            <TaskList />
           </div>
         </section>
       </main>
