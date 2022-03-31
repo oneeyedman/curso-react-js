@@ -15,13 +15,23 @@ class NewTodo extends React.Component {
     this.setState({task_name: name});
   }
 
+  getNextID = list => {
+    return list.reduce((acc, val) => acc >= val.id ? acc : val.id, 0) + 1;
+  }
 
-  handleNewTodoAddition = (event) => {
+  handleNewTodoAddition = event => {
     const taskName = this.state.task_name.trim();
-
+    const newID = this.getNextID(this.props.list);
     if (taskName) {
       console.log(`La nueva tarea se llama ${taskName}`)
-     this.props.add(taskName);
+     this.props.add({
+       id: newID,
+       creation_date: new Date(),
+       label: taskName,
+       done: false,
+       completion_date: null
+     });
+     this.setState({task_name: ''})
     } else {
       console.log('Que qué?');
     }
@@ -42,11 +52,11 @@ class NewTodo extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return { list: state.list};
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { add: (text) => dispatch(addAction(text)) };
+  return { add: (obj) => dispatch(addAction(obj)) };
 };
 
 export default connect(mapStateToProps,mapDispatchToProps)(NewTodo);

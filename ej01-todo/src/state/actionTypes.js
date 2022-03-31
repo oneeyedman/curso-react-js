@@ -1,5 +1,7 @@
 const ACTION_ADD = 'ADD';
+const ACTION_COMPLETE = 'COMPLETE';
 
 export {
-  ACTION_ADD
+  ACTION_ADD,
+  ACTION_COMPLETE
 }

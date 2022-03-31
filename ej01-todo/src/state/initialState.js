@@ -1,5 +1,11 @@
 const state = {
-  list: ['Tarea 1', 'Tarea 2', 'Tarea 3']
+  list: [{
+    id: 0,
+    creation_date: new Date(),
+    label: 'Tarea de ejemplo',
+    done: false,
+    completion_date: null
+  }]
 };
 
 export default state;

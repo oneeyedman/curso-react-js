@@ -1,12 +1,20 @@
-import {ACTION_ADD} from "./actionTypes";
+import { ACTION_ADD, ACTION_COMPLETE } from "./actionTypes";
 
-function addAction(text) {
+function addAction(obj) {
   return {
     type: ACTION_ADD,
-    payload: { text }
+    payload: {...obj}
+  }
+}
+
+function completeAction(id) {
+  return {
+    type: ACTION_COMPLETE,
+    payload: { id: Number(id) }
   }
 }
 
 export {
-  addAction
+  addAction,
+  completeAction
 };
