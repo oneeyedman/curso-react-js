@@ -1,5 +1,8 @@
 import './App.css';
 import { NewTodo } from "./components/NewTodo";
+import { TaskList } from "./components/TaskList";
+
+const misOraciones = ['Tarea 1', 'tarea 2'];
 
 function App() {
   return (
@@ -13,17 +16,13 @@ function App() {
         <section className="app__add-todo">
           <div className="app__wrapper">
             <h2 className="app__add-todo-title">Añadir nueva tarea</h2>
-            <form action="" className="app__add-todo-form form">
-              <NewTodo />
-            </form>
+            <NewTodo />
           </div>
         </section>
         <section className="app__todo">
           <div className="app__wrapper">
             <h2 className="app__todo-title sr">Lista de tareas</h2>
-            <ul className="app__todo-list">
-              <li className="app__todo-item"></li>
-            </ul>
+            <TaskList list={ misOraciones }/>
           </div>
         </section>
       </main>
