@@ -23,7 +23,7 @@ class NewTodo extends React.Component {
       console.log(`La nueva tarea se llama ${taskName}`)
      this.props.add({
        id: newID,
-       creation_date: new Date(),
+       creation_date: new Date().toISOString(),
        label: taskName,
        done: false,
        completion_date: null

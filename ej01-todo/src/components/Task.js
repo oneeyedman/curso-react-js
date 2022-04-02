@@ -3,7 +3,7 @@ import { completeAction, toggleCompletionAction, deleteAction } from "../state/a
 import { formatDate } from "../utils/date";
 
 function Task(props) {
-  const { label, id, done, completion_date } = props;
+  const { label, id, done, completion_date, creation_date } = props;
 
   const handleStatusChange = event => {
     const taskID = event.currentTarget.id;

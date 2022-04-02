@@ -8,7 +8,27 @@ function getNextID(list) {
 }
 
 
+function orderByDate(a,b) {
+  const aDate = new Date(a.creation_date);
+  const bDate = new Date(b.creation_date);
+  return aDate - bDate;
+}
+
+
+function orderByCompletionStatus(a,b) {
+  if (a.done && !b.done) {
+    return 1;
+  } else if (!a.done && b.done) {
+    return -1;
+  } else {
+    return 0;
+  }
+}
+
+
 export {
   findTaskIndex,
-  getNextID
+  getNextID,
+  orderByDate,
+  orderByCompletionStatus,
 }

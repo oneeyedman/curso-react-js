@@ -1,11 +1,17 @@
 import { connect } from 'react-redux';
+import { orderByDate, orderByCompletionStatus } from '../utils/lists';
 import Task from './Task';
 
 
 function TaskList(props) {
+  const task_list = [...props.list];
   return (
     <ul className="app__todo-list">
-      {props.list.map(task => <li className="app__todo-item" key={task.id}><Task {...task} /></li>)}
+      {task_list
+        .map(i=>i)
+        .sort(orderByDate)
+        .sort(orderByCompletionStatus)
+        .map(task => <li className="app__todo-item" key={task.id}><Task {...task} /></li>)}
     </ul>
   );
 }
