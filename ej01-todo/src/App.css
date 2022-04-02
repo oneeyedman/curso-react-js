@@ -1,15 +1,15 @@
 .sr {
   border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important;  /* 2 */
+  clip-path: inset(50%) !important;
   height: 1px !important;
   margin: -1px !important;
   overflow: hidden !important;
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
-  white-space: nowrap !important;            /* 3 */
+  white-space: nowrap !important;
 }
 
 
@@ -67,6 +67,80 @@
 .app__todo {}
 .app__todo-title {}
 .app__todo-list {
-  padding-left: 20px;
+  padding: 0;
+  margin: 1em 0 0;
+  list-style: none;
 }
-.app__todo-item {}
+
+.app__todo-item {
+  display: flex;
+}
+
+.app__todo-item + .app__todo-item {
+  margin-top: .25em;
+}
+
+
+
+
+
+.task {
+  position: relative;
+  display: inline-block;
+  line-height: 30px;
+  padding-right: 40px;
+  overflow: hidden;
+}
+
+.task__label {}
+
+.task__field {}
+
+.task__completion-date {
+  opacity: .5;
+}
+
+.task__completion-date::before {
+  content: ' ';
+}
+
+.task__delete-me {
+  position: absolute;
+  left: 200%;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  background: url(/public/images/trash.svg) center no-repeat;
+  background-size: 20px;
+  padding-top: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.task:hover .task__delete-me {
+  left: 100%;
+}
+
+
+
+
+
+.task--done {}
+
+.task--done .task__label {
+  opacity: .75;
+}
+
+.task--done::after {
+  content: '';
+  left: 20px;
+  top: 50%;
+  transform: translateY(50%);
+  position: absolute;
+  right: 40px;
+  height: 1px;
+  background-color: black;
+  opacity: .25;
+}
