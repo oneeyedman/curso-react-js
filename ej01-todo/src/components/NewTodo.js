@@ -37,8 +37,13 @@ class NewTodo extends React.Component {
     }
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.handleNewTodoAddition()
+  }
+
   render() {
-    return (<form action="" className="app__add-todo-form form">
+    return (<form action="" className="app__add-todo-form form" onSubmit={ this.handleSubmit }>
       <div className="form__row">
         <label htmlFor="newTodoItem" className="form__label sr">Añadir nueva tarea</label>
         <input id="newTodoItem" name="newTodoItem" className="form__field" type="text" onChange={this.getTaskName}
