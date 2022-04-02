@@ -21,7 +21,7 @@ class NewTodo extends React.Component {
 
   handleNewTodoAddition = event => {
     const taskName = this.state.task_name.trim();
-    const newID = this.getNextID(this.props.list);
+    const newID = getNextID(this.props.list);
     if (taskName) {
       console.log(`La nueva tarea se llama ${taskName}`)
      this.props.add({
