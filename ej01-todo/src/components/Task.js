@@ -2,8 +2,9 @@ import { connect } from "react-redux";
 import { completeAction, toggleCompletionAction, deleteAction } from "../state/actions";
 import { formatDate } from "../utils/date";
 
+
 function Task(props) {
-  const { label, id, done, completion_date, creation_date } = props;
+  const { label, id, done, completion_date } = props;
 
   const handleStatusChange = event => {
     const taskID = event.currentTarget.id;
@@ -14,6 +15,7 @@ function Task(props) {
     const taskID = event.currentTarget.dataset.id;
     props.del(taskID);
   }
+
   return (
     <div className={`task ${done ? 'task--done':''}`}>
       <input id={ id } name="tasks" className="task__field" type="checkbox" onChange={ handleStatusChange } checked={ done } />

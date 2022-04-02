@@ -8,7 +8,13 @@ function loadTasks() {
   return list ? JSON.parse(list) : [];
 }
 
+function saveLocalStorage(state) {
+  saveTasks(state);
+  return state;
+}
+
 export {
   saveTasks,
   loadTasks,
+  saveLocalStorage,
 }
