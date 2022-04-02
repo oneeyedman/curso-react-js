@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { completeAction } from "../state/actions";
+import { formatDate } from "../utils/date";
 
 function Task(props) {
   const { label, id, done, completed_date } = props;
@@ -8,10 +9,10 @@ function Task(props) {
     props.complete(taskID);
   }
   return (
-    <div className="task">
+    <div className={`task ${done ? 'task--done':''}`}>
       <input id={ id } name="tasks" type="checkbox" onChange={handleStatusChange} checked={done} />
       <label htmlFor={ id }>{ label }</label>
-      {done && <time dateTime={ completed_date }>{ completed_date }</time>}
+      {done && <time dateTime={ completed_date }>{ formatDate(completed_date) }</time>}
     </div>
   );
 }
