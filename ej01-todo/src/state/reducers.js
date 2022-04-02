@@ -1,5 +1,6 @@
 import { ACTION_ADD, ACTION_COMPLETE, ACTION_TOGGLE_COMPLETION , ACTION_DELETE} from "./actionTypes";
 import { findTaskIndex } from "../utils/lists";
+import { saveTasks } from "../utils/localstorage";
 import initialState from "./initialState";
 
 function addReducer(state = initialState.list, action) {
@@ -11,6 +12,7 @@ function addReducer(state = initialState.list, action) {
   switch (action.type) {
     case ACTION_ADD:
       newState.push(action.payload);
+      saveTasks(newState);
       return newState;
       break;
     case ACTION_COMPLETE:
@@ -20,6 +22,7 @@ function addReducer(state = initialState.list, action) {
         newState[index].done = true;
         newState[index].completion_date = new Date().toISOString();
       }
+      saveTasks(newState);
       return newState;
       break;
     case ACTION_TOGGLE_COMPLETION:
@@ -28,6 +31,7 @@ function addReducer(state = initialState.list, action) {
         newState[index].done = !newState[index].done;
         newState[index].completion_date = newState[index].done ? new Date().toISOString() : null;
       }
+      saveTasks(newState);
       return newState;
       break;
     case ACTION_DELETE:
@@ -35,6 +39,7 @@ function addReducer(state = initialState.list, action) {
       if (index >= 0) {
         newState.splice(index, 1);
       }
+      saveTasks(newState);
       return newState;
       break;
     default:

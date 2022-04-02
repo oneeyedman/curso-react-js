@@ -1,6 +1,7 @@
 import React from 'react';
-import {addAction} from "../state/actions";
-import {connect} from "react-redux";
+import { addAction } from "../state/actions";
+import { connect } from "react-redux";
+import { getNextID } from '../utils/lists';
 
 class NewTodo extends React.Component {
   constructor(props) {
@@ -13,10 +14,6 @@ class NewTodo extends React.Component {
   getTaskName = (event) => {
     const name = event.currentTarget.value;
     this.setState({task_name: name});
-  }
-
-  getNextID = list => {
-    return list.reduce((acc, val) => acc >= val.id ? acc : val.id, 0) + 1;
   }
 
   handleNewTodoAddition = event => {

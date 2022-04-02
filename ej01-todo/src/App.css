@@ -119,6 +119,7 @@
   cursor: pointer;
 }
 
+.task__delete-me:focus,
 .task:hover .task__delete-me {
   left: 100%;
 }

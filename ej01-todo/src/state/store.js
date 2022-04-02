@@ -3,8 +3,7 @@ import { combineReducers } from 'redux';
 import { addReducer } from './reducers';
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import {ACTION_ADD} from "./actionTypes";
-import initialState from "./initialState";
+
 
 
 

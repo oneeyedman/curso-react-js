@@ -1,11 +1,7 @@
+import { loadTasks } from "../utils/localstorage";
+
 const state = {
-  list: [{
-    id: 0,
-    creation_date: new Date(),
-    label: 'Tarea de ejemplo',
-    done: false,
-    completion_date: null
-  }]
+  list: loadTasks()
 };
 
 export default state;
