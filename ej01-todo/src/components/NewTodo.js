@@ -46,7 +46,7 @@ class NewTodo extends React.Component {
         <input id="newTodoItem" name="newTodoItem" className="form__field" type="text" onChange={this.getTaskName}
                value={this.state.task_name}/>
       </div>
-      <div className="form__row">
+      <div className="form__row form__row--action">
         <button className="form__button form__add" type="button" onClick={this.handleNewTodoAddition}>Añadir</button>
       </div>
     </form>);

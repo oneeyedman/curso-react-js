@@ -22,7 +22,7 @@ function Task(props) {
       <label htmlFor={ id } className="task__label">{ label }</label>
       { done && <time dateTime={ completion_date } className="task__completion-date">{ formatDate(completion_date) }</time> }
 
-      <button type="button" className="task__delete-me" data-id={ id } onClick={ handleDelete }>Borrar tarea</button>
+      <button type="button" className="task__delete-me" data-id={ id } onClick={ handleDelete }>Borrar tarea: { label }</button>
     </div>
   );
 }
