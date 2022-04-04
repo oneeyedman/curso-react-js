@@ -3,6 +3,11 @@ import { actionAdd, actionComplete, actionToggleCompletion, actionDelete } from 
 import { saveLocalStorage } from "../utils/localstorage";
 import initialState from "./initialState";
 
+function lastUpdateReducer(state = initialState.lastUpdate, action) {
+  return +new Date();
+}
+
+
 function listReducer(state = initialState.list, action) {
   switch (action.type) {
     case ACTION_ADD:
@@ -19,5 +24,6 @@ function listReducer(state = initialState.list, action) {
 }
 
 export {
-  listReducer
+  listReducer,
+  lastUpdateReducer,
 }

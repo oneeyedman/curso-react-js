@@ -42,7 +42,7 @@
 	background: linear-gradient(to bottom, #ffffff 0%, rgba(244, 245, 246, .3) 100%);
 	border-radius: 16px;
 	box-shadow: 0 4px 18px rgba(0, 0, 0, .15);
-	margin: 20px 0;
+	margin: 50px 0;
 	padding: 30px;
 	position: relative;
 }
@@ -80,15 +80,18 @@
   position: relative;
 }
 
-/* .app__header::after {
-  content: '';
-  height: 1px;
-  background-color: blue;
+.app__last-update {
   position: absolute;
-  bottom: 0;
-  left: -30px;
-  right: -30px;
-} */
+  right: 20px;;
+  bottom: 100%;
+  margin: 0;
+  font-size: .85em;
+  color: white;
+  transform: translateY(-30px);
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
 
 .app__title {
 	font-size: 20px;

@@ -1,16 +1,13 @@
 import './App.css';
 import NewTodo from "./components/NewTodo";
 import TaskList from "./components/TaskList";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="app">
       <div className="app__panel">
-        <header className="app__header">
-          <div className="app__wrapper">
-            <h1 className="app__title">Mis oraciones</h1>
-          </div>
-        </header>
+        <Header />
         <main className="app__main">
           <section className="app__add-todo">
             <div className="app__wrapper">
